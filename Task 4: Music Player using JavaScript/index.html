@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MP3 Player</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <img src="playlist_icon.png" alt="playlist" id="playlist_icon">
+    <h1>MP3 Player</h1>
+  </header>
+  <main>
+    <div class="left">
+      <div class="image" id="image"></div>
+      <div class="volume_div">
+        <div class="volume_img">
+          <img src="volume_icon.png" alt="volume-img" class="vol_img_div">
+        </div>  
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="1" />
+      </div>
+    </div>
+    <div class="right">
+      <div class="song_details">
+        <h3 class="song_name" id="song_name">Song Name</h3>
+        <p class="artist" id="artist">Artist</p>
+      </div>
+      <input type="range" id="duration" />
+      <div class="time-display">
+        <span id="current-time">00:00</span> / <span id="total-duration">00:00</span>
+      </div>
+      <div class="controls">
+        <div class="prev-button"><i class="fa-solid fa-backward" onclick="previous()"></i></div>
+        <div class="play-button"><i class="fa-solid fa-play" id="playpause" onclick="playpause()"></i></div>
+        <div class="next-button"><i class="fa-solid fa-forward" onclick="next()"></i></div>
+      </div>
+    </div>
+    <div class="playlist" id="playlist">
+      <div class="playlist_song" onclick="loadTrack(0)">
+        <img src="image1.jpg" alt="img" class="play-img">
+        <div class="song-details">
+          <h2>Warriyo</h2>
+          <h5>Laura Brehm</h5>
+        </div>
+      </div>
+      <div class="playlist_song" onclick="loadTrack(1)">
+        <img src="image2.jpg" alt="img">
+        <div class="song-details">
+          <h2>On And On</h2>
+          <h5>Stephen Bishop</h5>
+        </div>
+      </div>
+      <div class="playlist_song" onclick="loadTrack(2)">
+        <img src="image3.jpg" alt="img">
+        <div class="song-details">
+          <h2>Tony Mayhem</h2>
+          <h5>Ravi Basrur</h5>
+        </div>
+      </div>
+      <div class="playlist_song" onclick="loadTrack(3)">
+        <img src="image4.jpg" alt="img">
+        <div class="song-details">
+          <h2>Infected</h2>
+          <h5>Sickick</h5>
+        </div>
+      </div>
+      <div class="playlist_song" onclick="loadTrack(4)">
+        <img src="image5.jpeg" alt="img">
+        <div class="song-details">
+          <h2>Passo Bem Solto</h2>
+          <h5>ATLXS</h5>
+        </div>
+      </div>
+    </div>
+    <audio id="track"></audio>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
